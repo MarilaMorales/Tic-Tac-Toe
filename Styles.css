@@ -1,0 +1,120 @@
+body{
+    background-image: url("file:///C:/Users/mgonz/Desktop/Progra/Javascript/Tik%20Tak%20toe/IMG/fondo2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-Container{
+    backdrop-filter: blur(10px);
+    width: 60%;
+    height: 90%;
+}
+
+.Tictac-Container{
+
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+    border-color: rgba(0, 255, 255, 0.783);
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 200, 67, 0.3),
+    0.7em 0.7em 1.3em rgba(221, 39, 179, 0.683);
+    backdrop-filter: blur(15px);
+    border-radius: 2rem;
+    width: 27rem;
+    height: 27rem;
+    margin: 50px auto;
+    
+
+}
+
+#Celda0{
+    grid-column: 1;
+    grid-row: 1;
+    border-bottom: 3px solid rgb(73, 223, 216);
+    border-right: 3px solid rgb(73, 223, 216) ;
+    color: aqua;
+    
+    
+}
+
+#Celda1{
+    grid-column: 2;
+    grid-row: 1;
+    border-bottom: 3px solid rgb(73, 223, 216);
+    border-left:3px solid rgb(73, 223, 216);
+   
+}
+#Celda2{
+    grid-column: 3;
+    grid-row: 1;
+    border-left:3px solid rgb(73, 223, 216);
+    border-bottom: 3px solid rgb(73, 223, 216);
+}
+#Celda3{
+    grid-column: 1;
+    grid-row: 2;
+    border-right: 3px solid rgb(73, 223, 216);
+    
+    
+}
+#Celda4{
+    grid-column: 2;
+    grid-row: 2;
+    border-right: 3px solid rgb(73, 223, 216);
+    border-bottom: 3px solid rgb(73, 223, 216);
+}
+#Celda5{
+    grid-column: 3;
+    grid-row: 2;
+    border-bottom: 3px solid rgb(73, 223, 216);
+
+  
+}
+#Celda6{
+    grid-column: 1;
+    grid-row: 3;
+    border-top:3px solid rgb(73, 223, 216);
+    border-right: 3px solid rgb(73, 223, 216);
+
+}
+#Celda7{
+    grid-column: 2;
+    grid-row: 3;
+
+}
+#Celda8{
+    grid-column: 3;
+    grid-row: 3;
+    border-left:3px solid rgb(73, 223, 216);
+}
+
+
+
+.celda{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    font-size: 6rem;
+    color: aqua;
+    font-weight: bolder;
+}
+
+
+.tituloTicTac{
+    display: flex;
+    justify-content: center;
+    
+}
