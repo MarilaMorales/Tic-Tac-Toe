@@ -30,13 +30,21 @@ for (let i = 0; i < celdas.length; i++) {
     });
 }
 
+
+
+
 function turnoComputadora() {
+    celdasVacias = [];
     // Encuentra las celdas vacías    
     for (let i = 0; i < tableroInicio.length; i++) {
         if (tableroInicio[i] === "") {
             celdasVacias.push(i);
         }
     }
+
+    // if (celdasVacias.length === 0) {
+    //     return
+    // }
 
     // Valida si hay celdas vacias para usar Random
     if (celdasVacias.length > 0) {        
@@ -66,10 +74,22 @@ function reiniciarJuego() {
 
 
 
-let botonReinicio = document.getElementById("Reinicio");
+let botonReinicio = document.getElementById("reinicio");
 botonReinicio.addEventListener("click", reiniciarJuego);
 
 
+function ganador() {
+    
+    for (let i = 0; i < numGanadores.length; i++) {
+        let combinacion = numGanadores[i];
+        if (tableroInicio[combinacion[0]] === jugador && 
+            tableroInicio[combinacion[1]] === jugador && 
+            tableroInicio[combinacion[2]] === jugador) {
+            
+        return true;
+        }
+    }
+}
 
 
 
@@ -91,33 +111,4 @@ botonReinicio.addEventListener("click", reiniciarJuego);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for (let i = 0; i < celda.length; i++) {
-//     celda[i].addEventListener("click", turnojugador )
-// }
 
