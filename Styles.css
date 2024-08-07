@@ -29,8 +29,8 @@ body{
     0.7em 0.7em 1.3em rgba(221, 39, 179, 0.683);
     backdrop-filter: blur(15px);
     border-radius: 2rem;
-    width: 27rem;
-    height: 27rem;
+    width: 24rem;
+    height: 24rem;
     margin: 50px auto;
     
 
@@ -116,5 +116,28 @@ body{
 .tituloTicTac{
     display: flex;
     justify-content: center;
+    /* margin: 2rem; */
+    padding-top: 3rem;
     
+}
+
+
+#scoreboard {
+    text-align: center;
+    font-size: 1.6rempx;
+    display: flex;
+    justify-content: center;
+}
+
+.puntaje{
+    text-align: center;
+    font-size: 1.6rempx;
+}
+
+#player1{
+    color: aquamarine;
+}
+
+#player2{
+    color: rgb(42, 57, 225);
 }

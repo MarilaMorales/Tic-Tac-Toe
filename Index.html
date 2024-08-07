@@ -8,27 +8,32 @@
 </head>
 <body>
 
-    <table id="scoreboard">
-        <tr>
-          <td> Jugador X </td>
-           <td width="30"> &nbsp; </td> <!--&nbsp A non-breaking space is a space that will not break into a new line. -->
-          <td> Jugador O </td>
-        </tr>
-        <tr>
-          <td class="puntaje" id="player1">
-            0 
-          </td>
-          <td> &nbsp; </td>
-          <td class="puntaje" id="player2">
-            0 
-          </td>
-        </tr>
-      </table>
+
+    <div class="tituloTicTac">
+        <img src= "IMG/TicTacTitulo2.png" alt="">
+    </div>
+    
 
     <div class="game-Container">
-        <div class="tituloTicTac">
-            <img src= "IMG/TicTacTitulo2.png" alt="">
-        </div>
+        
+        <table id="scoreboard">
+            <tr>
+               <td> <img src="IMG/Jugador2.png" alt=""></td>
+               <td width="30"> &nbsp; </td> <!--&nbsp A non-breaking space is a space that will not break into a new line. -->
+               <td> Jugador O </td>
+            </tr>
+            <tr>
+               <td class="puntaje" id="player1">
+                0 
+               </td>
+               <td> &nbsp; </td>
+               <td class="puntaje" id="player2">
+                0 
+              </td>
+            </tr>
+        </table>
+
+
         <div class="Tictac-Container">
             <div class="celda" id="Celda0"></div>
             <div class="celda" id="Celda1"></div>
@@ -42,8 +47,7 @@
         </div>
 
         <div class="fondoTitulos">        
-            <div class="resultados"></div>
-            <div class="contadorJuegos"></div>
+            <div id="turno" style="color: red;"></div>
             <div class="btnReinicio">
                 <button id="reinicio"> Reiniciar Juego</button>
             </div>
