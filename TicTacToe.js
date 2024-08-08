@@ -30,6 +30,7 @@ for (let i = 0; i < celdas.length; i++) {
                     player2.textContent = puntajeO;
                 }
                 juego = false;
+                turno.innerHTML="Turno de X"
                 return;
             }
 

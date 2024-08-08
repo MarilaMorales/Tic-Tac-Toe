@@ -1,5 +1,5 @@
 body{
-    background-image: url("file:///C:/Users/mgonz/Desktop/Progra/Javascript/Tik%20Tak%20toe/IMG/fondo2.png");
+    background-image: url("IMG/fondo2.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -30,8 +30,9 @@ body{
     backdrop-filter: blur(15px);
     border-radius: 2rem;
     width: 24rem;
-    height: 24rem;
+    height: 22rem;
     margin: 50px auto;
+    margin-top: 1.7rem;
     
 
 }
@@ -96,9 +97,6 @@ body{
     grid-row: 3;
     border-left:3px solid rgb(73, 223, 216);
 }
-
-
-
 .celda{
 
     display: flex;
@@ -111,33 +109,48 @@ body{
     color: aqua;
     font-weight: bolder;
 }
-
-
 .tituloTicTac{
     display: flex;
     justify-content: center;
-    /* margin: 2rem; */
+    margin-top: 3rem;
     padding-top: 3rem;
     
 }
-
-
 #scoreboard {
     text-align: center;
     font-size: 1.6rempx;
     display: flex;
     justify-content: center;
+    padding: 0px;
 }
-
+#imageX{
+    align-self: self-start;
+    
+}
 .puntaje{
     text-align: center;
     font-size: 1.6rempx;
 }
-
 #player1{
     color: aquamarine;
+    align-self: stretch;
+    font-size: 2rem;
+    font-weight: bold;
 }
-
 #player2{
     color: rgb(42, 57, 225);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#reinicio{
+    color: rgb(40, 208, 202);
+    background-color: rgb(52, 5, 101);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    font-family: fantasy;
+    letter-spacing: 0.2rem;
+    
+
 }
