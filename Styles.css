@@ -9,14 +9,15 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    margin: 0px;
 }
 
 .game-Container{
     backdrop-filter: blur(10px);
-    width: 60%;
-    height: 90%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .Tictac-Container{
@@ -31,10 +32,17 @@ body{
     border-radius: 2rem;
     width: 24rem;
     height: 22rem;
-    margin: 50px auto;
     margin-top: 1.7rem;
+    margin-left: 9rem;
     
 
+}
+
+.ganadores{
+    font-size: 1.2rem;
+    color: aqua;
+    font-family: monospace;
+    margin-top: 8rem;
 }
 
 #Celda0{
@@ -43,8 +51,6 @@ body{
     border-bottom: 3px solid rgb(73, 223, 216);
     border-right: 3px solid rgb(73, 223, 216) ;
     color: aqua;
-    
-    
 }
 
 #Celda1{
@@ -112,7 +118,7 @@ body{
 .tituloTicTac{
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    /* margin-top: 2rem; */
     padding-top: 3rem;
     
 }
@@ -151,6 +157,18 @@ body{
     padding: 0.5rem;
     font-family: fantasy;
     letter-spacing: 0.2rem;
-    
+}
 
+#turno{
+    color: aquamarine;
+    font-size: 1.2rem;
+    font-family: fantasy;
+    margin-left: 5rem;
+    margin-top: 8rem;
+}
+
+.fondostitulos{
+
+    text-align: center;
+    padding-left: 0%;
 }

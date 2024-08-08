@@ -2,6 +2,8 @@ let celdas = document.getElementsByClassName("celda");
 let player1 = document.getElementById("player1");
 let player2 = document.getElementById("player2");
 let turno = document.getElementById("turno");
+let ganoX= document.getElementById("ganoX");
+let ganoO= document.getElementById("ganoO");
 let jugador = "X";
 let tableroInicio = ["", "", "", "", "", "", "", "", ""];
 let celdasVacias = [];
@@ -14,7 +16,7 @@ let puntajeX = 0;
 let puntajeO = 0;
 
 
-
+cargarLocal();
 
 // Se asigna un EventListener a las celdas
 for (let i = 0; i < celdas.length; i++) {
@@ -27,7 +29,8 @@ for (let i = 0; i < celdas.length; i++) {
             tableroInicio[i] = jugador;
 
             if (verificarGanador(jugador)) {
-                alert(jugador + " es el ganador!");
+                // alert(jugador + " es el ganador!");
+                ganoX.innerHTML="Gano JugadorX";
                 if (jugador === "X") {
                     puntajeX++;
                     player1.textContent = puntajeX;
@@ -35,7 +38,7 @@ for (let i = 0; i < celdas.length; i++) {
                     puntajeO++;
                     player2.textContent = puntajeO;
                 }
-                guardarLocal()
+                guardarLocal();
                 juego = false;
                 return;
             }
@@ -68,7 +71,8 @@ function turnoComputadora() {
             celdas[numeroRandom].innerHTML = "O";        
 
             if (verificarGanador("O")) {
-                alert("O es el ganador!");
+                // alert("O es el ganador!");
+                ganoO.innerHTML="Gano Jugador O";
                 puntajeO++;
                 player2.textContent = puntajeO;
                 juego = false;
@@ -145,4 +149,16 @@ function guardarLocal() {
     localStorage.setItem("puntajeX", puntajeX)
     localStorage.setItem("puntajeO", puntajeO)
     
+}
+
+
+function cargarLocal() {
+    if (localStorage.getItem('puntajeX')) {
+        puntajeX = parseInt(localStorage.getItem('puntajeX'));
+    }
+    if (localStorage.getItem('puntajeO')) {
+        puntajeO = parseInt(localStorage.getItem('puntajeO'));
+    }
+    player1.textContent = puntajeX;
+    player2.textContent = puntajeO;
 }
