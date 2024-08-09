@@ -2,11 +2,16 @@ let celdas = document.getElementsByClassName("celda");
 let player1 = document.getElementById("player1");
 let player2 = document.getElementById("player2");
 let turno = document.getElementById("turno");
-let ganoX= document.getElementById("ganoX");
-let ganoO= document.getElementById("ganoO");
+let ganoX = document.getElementById("ganoX");
+let ganoO = document.getElementById("ganoO");
+let imagenGanoX = document.getElementById("imagenGanoX");
+let imagenGanoO = document.getElementById("imagenGanoO");
+let Empate = document.getElementById("Empate");
 let click = document.getElementById("click");
+let empateClick = document.getElementById("empateClick");
 let clickStar = document.getElementById("clickStar");
 let clickGanador = document.getElementById("clickGanador");
+let reinicioSound = document.getElementById("reinicioSound");
 let jugador = "X";
 let tableroInicio = ["", "", "", "", "", "", "", "", ""];
 let celdasVacias = [];
@@ -18,7 +23,6 @@ let juego = true;
 let puntajeX = 0;
 let puntajeO = 0;
 
-
 cargarLocal();
 
 // Se asigna un EventListener a las celdas
@@ -26,7 +30,6 @@ for (let i = 0; i < celdas.length; i++) {
     celdas[i].addEventListener("click", function() {
         if (!juego || this.innerHTML !== "") {
             return;
-            
         }
 
         click.play();
@@ -36,7 +39,7 @@ for (let i = 0; i < celdas.length; i++) {
             tableroInicio[i] = jugador;
 
             if (verificarGanador(jugador)) {
-                ganoX.innerHTML="Gano JugadorX";
+                mostrarGanador(jugador);
                 clickGanador.play();
                 if (jugador === "X") {
                     puntajeX++;
@@ -59,11 +62,7 @@ for (let i = 0; i < celdas.length; i++) {
             actualizarTurno(); 
         }
     });
-    // 
 }
-
-
-
 
 function turnoComputadora() {
     setTimeout(function() { 
@@ -81,8 +80,8 @@ function turnoComputadora() {
             clickStar.play();
 
             if (verificarGanador("O")) {
-                // alert("Gano O");
-                ganoO.innerHTML="Gano Jugador O";
+                mostrarGanador("O");
+                clickGanador.play();
                 puntajeO++;
                 player2.textContent = puntajeO;
                 juego = false;
@@ -92,10 +91,8 @@ function turnoComputadora() {
             jugador = "X";
             actualizarTurno()
         }
-    }   , 1000); // Retraso de 1000 ms (1 segundo)
-    
+    }, 1000); // Retraso de 1000 ms (1 segundo)
 }
-
 
 function verificarGanador(jugador) {
     for (let i = 0; i < numGanadores.length; i++) {
@@ -117,7 +114,11 @@ function verificarGanador(jugador) {
     }
     
     if (empate) {
-        alert("Empate!");
+        empateClick.play();
+        Empate.src = "IMG/Empate.png";
+        Empate.style.display = "block";
+        imagenGanoO.style.display = "none";
+        imagenGanoX.style.display = "none";
         juego = false;
     }
 
@@ -133,37 +134,47 @@ function actualizarTurno() {
     }
 }
 
+// Mostrar el ganador
+function mostrarGanador(jugador) {
+    if (jugador === "X") {
+        imagenGanoX.src = "IMG/GanadorX.png";
+        imagenGanoX.style.display = "block";
+        imagenGanoO.style.display = "none";
+        Empate.style.display = "none";
+    } else {
+        imagenGanoO.src = "IMG/GanadorO.png";
+        imagenGanoO.style.display = "block";
+        imagenGanoX.style.display = "none";
+        Empate.style.display = "none";
+    }
+}
 
 function reiniciarJuego() {
+    reinicioSound.play();
     for (let i = 0; i < celdas.length; i++) {
         celdas[i].innerHTML = "";
     }
     tableroInicio = ["", "", "", "", "", "", "", "", ""];
     celdasVacias = [];
     jugador = "X";
-    ganoX.innerText="";
-    ganoO.innerText="";
+    imagenGanoX.style.display = "none";
+    imagenGanoO.style.display = "none";
+    Empate.style.display = "none";
     juego = true;
-    actualizarTurno(); // Actualiza el turno al reiniciar el juego
+    actualizarTurno(); 
 }
 
 let botonReinicio = document.getElementById("reinicio");
 botonReinicio.addEventListener("click", reiniciarJuego);
 
-
-
-
 // Inicializar el turno al cargar la página
 actualizarTurno();
 
-//Guardar en el LocalStorage
-
+// Guardar en el LocalStorage
 function guardarLocal() {
-    localStorage.setItem("puntajeX", puntajeX)
-    localStorage.setItem("puntajeO", puntajeO)
-    
+    localStorage.setItem("puntajeX", puntajeX);
+    localStorage.setItem("puntajeO", puntajeO);
 }
-
 
 function cargarLocal() {
     if (localStorage.getItem('puntajeX')) {
@@ -175,23 +186,5 @@ function cargarLocal() {
     player1.textContent = puntajeX;
     player2.textContent = puntajeO;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

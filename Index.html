@@ -19,7 +19,7 @@
 
     <table id="scoreboard">
         <tr>
-           <td> <img id="imageX" src="IMG/Jugador2.png" alt=""></td>
+           <td> <img id="imageX" src="IMG/Jugador2.png" alt=""></td> 
            <td width="30"> &nbsp; </td> <!--&nbsp A non-breaking space is a space that will not break into a new line. -->
            <td> <img id="imageX" src="IMG/JugadorO.png" alt=""></td>
         </tr>
@@ -34,10 +34,23 @@
         </tr>
     </table>
 
+
+    
    
     <div class="game-Container">   
-        <div class="ganadores" id="ganoX"></div>
-        <div class="ganadores" id="ganoO"></div>
+        
+        <div class="ganadores" id="ganoX">
+            <img id="imagenGanoX" src="" alt="Ganador X" style="display:none;">
+          
+        </div>
+        <div class="ganadores" id="ganoO">
+            <img id="imagenGanoO" src="" alt="Ganador O" style="display:none;">
+        </div>
+        <div class="ganadores" id="EmpateJuego">
+            <img id="Empate" src="" alt="Empate" style="display:none;">
+        </div>
+       
+        
         <div class="Tictac-Container">
             <div class="celda" id="Celda0"></div>
             <div class="celda" id="Celda1"></div>
@@ -54,16 +67,15 @@
             <div id="turno"></div>
         </div>
     </div>
-<!-- Agrega esto dentro de la etiqueta <body> en tu HTML -->
-    <audio id="click" src="IMG/beep3-98810.mp3" preload="auto"></audio>
+
+
+    <audio id="click" src="IMG/jugador.wav" preload="auto"></audio>
     <audio id="clickStar" src="IMG/star.mp3" preload="auto"></audio>
     <audio id="clickGanador" src="IMG/ganador.wav" preload="auto"></audio>
+    <audio id="empateClick" src="IMG/empateClick.wav" preload="auto"></audio>
+    <audio id="reinicioSound" src="IMG/Reinicio.wav" preload="auto"></audio>
 
-    <footer class="footer">
-        <img src="IMG/mario.gif" alt="">
-    </footer>
-
-
+   
 <script src="TicTacToe.js"></script>
 </body>
-</html>
+</html>  
