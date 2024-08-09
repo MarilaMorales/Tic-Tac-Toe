@@ -4,6 +4,9 @@ let player2 = document.getElementById("player2");
 let turno = document.getElementById("turno");
 let ganoX= document.getElementById("ganoX");
 let ganoO= document.getElementById("ganoO");
+let click = document.getElementById("click");
+let clickStar = document.getElementById("clickStar");
+let clickGanador = document.getElementById("clickGanador");
 let jugador = "X";
 let tableroInicio = ["", "", "", "", "", "", "", "", ""];
 let celdasVacias = [];
@@ -23,14 +26,18 @@ for (let i = 0; i < celdas.length; i++) {
     celdas[i].addEventListener("click", function() {
         if (!juego || this.innerHTML !== "") {
             return;
+            
         }
+
+        click.play();
+
         if (!this.innerHTML) {
             this.innerHTML = jugador;
             tableroInicio[i] = jugador;
 
             if (verificarGanador(jugador)) {
-                // alert(jugador + " es el ganador!");
                 ganoX.innerHTML="Gano JugadorX";
+                clickGanador.play();
                 if (jugador === "X") {
                     puntajeX++;
                     player1.textContent = puntajeX;
@@ -49,10 +56,12 @@ for (let i = 0; i < celdas.length; i++) {
             } else {
                 jugador = "X";
             }
-            actualizarTurno(); // Actualiza el turno
+            actualizarTurno(); 
         }
     });
+    // 
 }
+
 
 
 
@@ -69,9 +78,10 @@ function turnoComputadora() {
             let numeroRandom = celdasVacias[Math.floor(Math.random() * celdasVacias.length)];
             tableroInicio[numeroRandom] = "O";
             celdas[numeroRandom].innerHTML = "O";        
+            clickStar.play();
 
             if (verificarGanador("O")) {
-                // alert("O es el ganador!");
+                // alert("Gano O");
                 ganoO.innerHTML="Gano Jugador O";
                 puntajeO++;
                 player2.textContent = puntajeO;
@@ -83,6 +93,7 @@ function turnoComputadora() {
             actualizarTurno()
         }
     }   , 1000); // Retraso de 1000 ms (1 segundo)
+    
 }
 
 
@@ -130,6 +141,8 @@ function reiniciarJuego() {
     tableroInicio = ["", "", "", "", "", "", "", "", ""];
     celdasVacias = [];
     jugador = "X";
+    ganoX.innerText="";
+    ganoO.innerText="";
     juego = true;
     actualizarTurno(); // Actualiza el turno al reiniciar el juego
 }
@@ -162,3 +175,23 @@ function cargarLocal() {
     player1.textContent = puntajeX;
     player2.textContent = puntajeO;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

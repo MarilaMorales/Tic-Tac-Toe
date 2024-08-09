@@ -1,5 +1,5 @@
 body{
-    background-image: url("IMG/fondo2.png");
+    background-image: url("IMG/Laser2.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -14,10 +14,17 @@ body{
 
 .game-Container{
     backdrop-filter: blur(10px);
-    width: 80%;
+    width: 70%;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 3rem;
+    height: 30rem;
+}
+
+.inicio{
+    display: flex;
+    justify-content: center;
+    
 }
 
 .Tictac-Container{
@@ -30,9 +37,9 @@ body{
     0.7em 0.7em 1.3em rgba(221, 39, 179, 0.683);
     backdrop-filter: blur(15px);
     border-radius: 2rem;
-    width: 24rem;
+    width: 27rem;
     height: 22rem;
-    margin-top: 1.7rem;
+    margin-top: 3rem;
     margin-left: 9rem;
     
 
@@ -43,6 +50,7 @@ body{
     color: aqua;
     font-family: monospace;
     margin-top: 8rem;
+    width: 4rem;
 }
 
 #Celda0{
@@ -118,8 +126,10 @@ body{
 .tituloTicTac{
     display: flex;
     justify-content: center;
-    /* margin-top: 2rem; */
-    padding-top: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-left: 20rem;
     
 }
 #scoreboard {
@@ -128,19 +138,26 @@ body{
     display: flex;
     justify-content: center;
     padding: 0px;
+    height: 3rem;
 }
 #imageX{
     align-self: self-start;
+    height: 4rem;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    
     
 }
 .puntaje{
     text-align: center;
-    font-size: 1.6rempx;
+    font-size: 1rem;
+    margin-bottom: 3rem;
 }
 #player1{
     color: aquamarine;
     align-self: stretch;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 #player2{
@@ -150,14 +167,25 @@ body{
 }
 
 #reinicio{
-    color: rgb(40, 208, 202);
-    background-color: rgb(52, 5, 101);
+    align-self: flex-end !important;
+    color: rgba(68, 15, 167, 0.782);
+    background-color: rgb(26, 192, 208);
     border-radius: 0.5rem;
-    font-size: 1.2rem;
-    padding: 0.5rem;
+    font-size: 1rem;
+    padding: 0.3rem;
     font-family: fantasy;
     letter-spacing: 0.2rem;
+    margin-left: 11rem;
+    margin-top: 3rem;
+    
+    
+    
 }
+
+.btnReinicio{
+    width: 30%;
+}
+
 
 #turno{
     color: aquamarine;
@@ -171,4 +199,21 @@ body{
 
     text-align: center;
     padding-left: 0%;
+}
+
+
+.footer {
+    background-image: url("../Tik Tak toe/IMG/portada.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed; 
+    height: 200px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.footer-image {
+    height: auto;
 }
